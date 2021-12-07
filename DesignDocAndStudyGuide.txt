@@ -1,0 +1,37 @@
+Game Design:
+
+The idea behind this game is to create an interactive Tarot reading, and extrapolate the mental conflict
+of future decision making and introspection with a fun rogue-like RPG system. Therefore, it is a tarot app first and a game second.
+There are 1540 possible permutations of 22 major arcana cards, which is beyond the scope of this project.
+Therefore cards will be "grouped" behind the scenes, and any order of N number of cards will deliver 1 of 9 bosses.
+These bosses will be uniquely assigned to each grouping in order to facilitate a more unique encounter.
+Each game instance will result in fighting 3 different bosses sequentially. Depending on the boss, a text blurb will
+show after victory and include a personalized message incorporating the theme of that boss.
+
+
+Combat:
+
+Combat will consist of turn based actions selected from pre-existing options. The bosses will have attacks determined
+by a random table. Combat will be fairly simplistic, but attempts at depth will be made based on the timeflow of the project.
+The player will unlock a special ability (referred to as wisdom) each time a boss is defeated.
+
+Wisdoms:
+
+These will function as unique "drops" based on the card. As the order of bosses will be randomized, each card pulled 
+will have a unique drop associated with its specific Arcana (as a hypothetical example, Death drops a scythe, The
+Magician drops a wand/fireball, etc). This will serve as an incentive to replay and allow for some additional choice
+in combat.
+
+
+Structure:
+
+Building a Tarot API will be necessary, fortunately using only the Major Arcana (22) makes it easier to implement a custom API.
+
+Using React, the initial UI will present a simple 3 card spread (past,present,future) where the user can drag and drop
+a card from the deck and tap again to flip it over, revealing their choice, the cards text/meaning, and then sequeing to
+the boss battle. Another UI will display that will allow the player to press buttons to simulate combat. Defeat will result
+in a return to the start of the spread, advising the player to pick a new card as the future is shrouded in uncertainty.
+
+There will be a backend handling the API calls, instantiation of bosses, and combat "rolls". Redux should be a good tool
+to handle certain aspects of the Tarot spread UI, but experimentation will be necessary to find the optimal set-up. Semantic-UI
+will likely be involved in order to streamline parts.
