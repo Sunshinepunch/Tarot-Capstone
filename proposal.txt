@@ -1,0 +1,23 @@
+Tarot Terror (Absolutely a WIP name)
+
+Project's Purpose or Goal: (This is a game that utilizes cards within a tarot deck to present randomized battles that serve as an opportunity for introspection while providing a fun gaming experience)
+
+List the absolute minimum features the project requires to meet this purpose or goal:
+
+Provides a user the ability to pull and view randomized Tarot cards in a basic 3 card reading (past, present, future)
+Takes the result of those cards to randomize a boss for the user to battle
+Provides a pre-written piece based on the specific cards pulled to give the user something to meditate or think upon
+What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
+
+React - using a virtual DOM to display different Tarot cards based on the user's draw seems optimal
+Tarot API (if it exists), or making one using the publicly available Rider-Waite deck images and descriptions
+JavaScript to provide functionality for the backend game functionality
+If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
+
+The MVP will likely only use the 22 cards from the Major arcana (as adding the full 78 is...quite a feat.) Adding additional cards is an easy stretch goal. 
+Using/Making a Tarot API might be a stretch goal instead, so if an API isn't ultimately utilized in the MVP, adding an API
+Expanding length of game to include different more advanced readings, as a typical Tarot reading involves more than 3 cards
+What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
+
+Tarot API
+Others involve additional coding or to be researched tools/frameworks/libraries - as it stands this project will likely be a JavaScript project utilizing React
