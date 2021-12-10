@@ -21,3 +21,5 @@ What additional tools, frameworks, libraries, APIs, or other resources will thes
 
 Tarot API
 Others involve additional coding or to be researched tools/frameworks/libraries - as it stands this project will likely be a JavaScript project utilizing React
+
+12/10/2021 - Reading into potential data solutions and layouts - video links and URLS below:
