@@ -47,6 +47,10 @@ https://www.youtube.com/watch?v=q5J5ho7YUhA
 https://www.youtube.com/watch?v=RBHdY842V6U
 https://www.youtube.com/watch?v=5DEq5cWNYt8
 https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/
+https://medium.com/@andrewsteinheiser/making-an-rpg-with-react-redux-dcfffdb06797
+https://www.youtube.com/watch?v=0pfLapmfxdY
+https://www.youtube.com/watch?v=3EMxBkqC4z0
+https://www.youtube.com/watch?v=eI9idPTT0c4
 
 
 
