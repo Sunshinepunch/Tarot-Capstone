@@ -35,3 +35,18 @@ in a return to the start of the spread, advising the player to pick a new card a
 There will be a backend handling the API calls, instantiation of bosses, and combat "rolls". Redux should be a good tool
 to handle certain aspects of the Tarot spread UI, but experimentation will be necessary to find the optimal set-up. Semantic-UI
 will likely be involved in order to streamline parts.
+
+12/9/2021 - 
+Watched this video:  https://www.youtube.com/watch?v=a9mUH1EWp40
+6:00-8:00 - continued reading information Semantic here (https://semantic-ui.com/introduction/getting-started.html)
+including integration guide here:  https://semantic-ui.com/introduction/integrations.html
+
+12/10/2021 - Reading into potential data solutions and layouts - video links and URLS below:
+https://www.youtube.com/watch?v=9kRgVxULbag
+https://www.youtube.com/watch?v=q5J5ho7YUhA
+https://www.youtube.com/watch?v=RBHdY842V6U
+https://www.youtube.com/watch?v=5DEq5cWNYt8
+https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/
+
+
+
