@@ -1,15 +1,16 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import './styles.css';
-import ThreeCard from "./ThreeCard"
+import App from "./App"
 
 
 
-
-render(
-<Header />,
-<ThreeCard />,
-document.getElementById('root'))
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 
 

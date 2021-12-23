@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { useSprings, animated, to } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 import './styles.css';
@@ -99,7 +98,15 @@ function shuffleDeckAndSelect3Cards(array) {
   return array.splice(0, 3)
 }
 
-function ThreeCard() {
+// function shuffleDeckAndSelect5Cards(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1))
+//     ;[array[i], array[j]] = [array[j], array[i]]
+//   }
+//   return array.splice(0, 5)
+// }
+
+function Deck() {
   const cards = shuffleDeckAndSelect3Cards(tarotDeck)
   const [props, set] = useSprings(cards.length, i => ({ ...toward(i), from: from(i) }))
   
@@ -125,7 +132,8 @@ function ThreeCard() {
       }
       <animated.div {...bind(i)} style={{ transform: to([ scale], trans), backgroundImage: `url(${cards[i]})` }} />
     </animated.div>
+    
   ))
 }
 
-export default ThreeCard;
+export default Deck;
