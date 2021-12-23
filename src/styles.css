@@ -16,68 +16,34 @@ body {
   overflow: hidden;
 }
 
-#a {
-  text-decoration: none;
-  border: 3px solid yellow;
-  color: transparent;
-  padding: 10px 30px;
-  font-size: 28px;
-  font-family: sans-serif;
-  letter-spacing: 5px;
-  transition: all 0.5s;
-  position: relative;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+body {
+	margin: 0;
+	background: linear-gradient(#f2f2f6, #d3d3e7);
 }
 
-#a:before {
-  content: "Deal?";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: yellow;
-  background: rgb(34, 34, 34);
-  font-size: 28px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: 5px;
-  transition: all 1s;
-  height: 100%;
+
+#dealbtn {
+  background-image:linear-gradient(to right, rgba(77, 71, 71, 0.876), rgb(56, 53, 4), rgb(56, 53, 4), rgba(77, 71, 71, 0.876));
+	font-family: Chiller;
+	letter-spacing: 0.2em;
+	font-weight: 600;
+	font-size: 70px;
+	text-align: center;
+	color: #202125;
+  cursor: pointer;
+  max-width: 300px; 
   width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
-#a:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
-  opacity: 1;
-}
-#a:after {
-  content: "Deal";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: yellow;
-  background: rgb(34, 34, 34);
-  font-size: 28px;
-  top: 0;
-  left: 0;
-  font-family: sans-serif;
-  letter-spacing: 5px;
-  transition: all 0.2s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(1) rotatey(0);
-  opacity: 1;
-}
-#a:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
+  outline: 3px solid;
+  outline-color: rgba(200, 233, 53, 0.7);
+  outline-offset: 50px;
+  transition: all 600ms cubic-bezier(0.2, 0, 0, 0.8);
 }
 
+#dealbtn:hover {
+	color: rgba(200, 233, 53, 0.7);
+  outline-color: rgba(71, 126, 232, 0);
+  outline-offset: 300px;
+}
 
 
 

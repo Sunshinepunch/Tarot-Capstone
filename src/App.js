@@ -19,7 +19,7 @@ function App() {
 
 return (
   <>
-  <button onClick={saveSpread} id="a" >Deal</button>
+  <button onClick={saveSpread} id="dealbtn" >Deal</button>
   <Deck>
   </Deck>
   </>
