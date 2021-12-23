@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { useSprings, animated, to } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
@@ -86,44 +86,44 @@ const tarotDeck = [
   'https://upload.wikimedia.org/wikipedia/en/3/33/Swords14.jpg'
 ]
 
-const toward = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
-const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
+const toward = i => ({ x: 0, y: i * -4, scale: 1, rot: -5 + Math.random() * 10, delay: i * 100 })
+const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000, zIndex: '0' })
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 
-function shuffleDeck(array) {
-  for (let i = array.length -1; i>0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]
+function shuffleDeckAndSelect3Cards(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
   }
-  return array
+  return array.splice(0, 3)
 }
 
-function Deck () {
-  const cards = shuffleDeck(tarotDeck)
-  const [removed] = useState(() => new Set())
-  const [props, set] = useSprings(cards.length, i => ({ ...toward(i), from: from(i) })) 
-
-  const bind = useGesture(({args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
-    const trigger = velocity > 0.2
-    const dir = xDir < 0 ? -1 : 1
-    if(!down && trigger) removed.add(index)
+function Deck() {
+  const cards = shuffleDeckAndSelect3Cards(tarotDeck)
+  const [props, set] = useSprings(cards.length, i => ({ ...toward(i), from: from(i) }))
+  
+  const bind = useGesture(({ args: [index], down, delta: [xDelta, yDelta] }) => {
     set(i => {
       if (index !== i) return
-      const isRemoved = removed.has(index)
-      const x = isRemoved ? (200 + window.innerWidth) * dir: down ? xDelta : 0
-      const rot = xDelta / 100 + (isRemoved ? dir * 10 * velocity : 0)
+      const x = down ? xDelta : 0
+      const y = down ? yDelta : 0
       const scale = down ? 1.1 : 1
-      return { x, rot, scale, delay: undefined, config: {friction: 50, tension: down ? 800 : isRemoved ? 200 : 500 }}
+      const zIndex = down ? 1 : 0
+      return { x, y, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : 500 }, zIndex }
     })
-    if (!down && removed.size === cards.length) setTimeout(() => removed.clear() || set(i => toward(i)), 600)
   })
-  return props.map(({ x, y, rot, scale }, i) => (
-    <animated.div key={i} style={{ transform: to([x, y], (x,y) => `translate3d(${x}px,${y}px, 0)`) }}>
+  return props.map(({ x, y, scale, zIndex }, i) => (
+    <animated.div
+      key={i}
+      style={{
+        transform: to([x, y], (x, y) => `translate3d(${x + (window.innerWidth / 5) * i - window.innerWidth / 5}px,${y}px,0)`),
+        zIndex
+      }}>
       {
-
+        // This has to exist or the card image won't load
       }
-      <animated.div {...bind(i)} style={{ transform: to([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+      <animated.div {...bind(i)} style={{ transform: to([ scale], trans), backgroundImage: `url(${cards[i]})` }} />
     </animated.div>
   ))
 }
